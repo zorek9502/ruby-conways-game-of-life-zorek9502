@@ -5,7 +5,9 @@ require "Matrix"
 
 class GoL_Rules
   def initialize
+    #attr_accessor @width, @height
     @universe
+    #create_universe(@width, @height)
   end
 
   def create_universe(cols, rows)
@@ -22,5 +24,15 @@ class GoL_Rules
       end
     end
     sum -= universe.component(i, j)
+  end
+
+  def live_or_die(cell, neighbors)
+    if cell == 0 and neighbors == 3
+      return 1
+    elsif (cell == 1 and (neighbors < 2 || neighbors > 3))
+      return 0
+    else
+      return cell
+    end
   end
 end
