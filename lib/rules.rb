@@ -14,12 +14,13 @@ class GoL_Rules
     create_universe(@@rows, @@cols)
   end
 
+  #Metodo que crea los universos
   def create_universe(rows, cols)
-    @universe = Matrix.build(rows, cols) { rand(2) }
-    @new_universe = Matrix.build(rows, cols) { }
+    @universe = Matrix.build(rows, cols) { rand(2) } #Crea una matriz del tamaño espeficicado y la rellena con 1 y 0 de forma aleatoria
+    @new_universe = Matrix.build(rows, cols) { } #Crea un segundo universo vacio
   end
 
-  #Funcion para contar los vecinos vivos
+  #Funcion para contar los vecinos vivos que tiene una celula en especifico, suma los 1
   def count_neighbors(universe, x, y)
     sum = 0
     (-1...2).each do |i|
@@ -29,9 +30,10 @@ class GoL_Rules
         sum += universe.component(eco_row, eco_col)
       end
     end
-    sum -= universe.component(x, y)
+    sum -= universe.component(x, y) #Restamos la posicion de la celula de referencia, ya que ella no cuenta como vecino
   end
 
+  #Reglas del juego que determinan si una celula vive o muere segun el numero de vecinos que esta tenga
   def live_or_die(cell, neighbors)
     if cell == 0 and neighbors == 3
       return 1

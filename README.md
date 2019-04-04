@@ -7,3 +7,6 @@ This game became widely known when it was mentioned in an article published by S
 
 ## Requirement
 - You must implement the game of life using ruby
+
+## How run the game
+- Execute the command: bundle exec ruby .\lib\game_of_life.rb

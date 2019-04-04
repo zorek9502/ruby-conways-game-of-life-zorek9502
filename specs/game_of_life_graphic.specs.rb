@@ -1,3 +1,7 @@
+#Esta es una prueba grafica del funcionamiento del juego con un
+#patron en especifico llamado "Blinker"
+#https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+
 require "gosu"
 require_relative "../lib/rules"
 require "Matrix"

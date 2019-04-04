@@ -7,6 +7,8 @@ class GoL_noG < Minitest::Test
   def setup
   end
 
+  #Evaluaciones de prueba para universos especificos, buscando que la nueva generacion
+  #Sea la correcta.
   def test_evaluate_gen
     rows = cols = 4
     gol = GoL_Rules.new(rows, cols)
