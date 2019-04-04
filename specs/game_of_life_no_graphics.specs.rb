@@ -26,4 +26,14 @@ class GoL_noG < Minitest::Test
     resp = evaluate_gen(gol, universe, new_universe)
     assert_equal(resp, expected_universe)
   end
+
+  def test_evaluate_gen3
+    rows = cols = 6
+    gol = GoL_Rules.new(rows, cols)
+    universe = Matrix[[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 0], [0, 1, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]]
+    new_universe = Matrix.build(rows, cols) { }
+    expected_universe = Matrix[[0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0], [0, 1, 0, 0, 1, 0], [0, 1, 0, 0, 1, 0], [0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0]]
+    resp = evaluate_gen(gol, universe, new_universe)
+    assert_equal(resp, expected_universe)
+  end
 end
