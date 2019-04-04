@@ -10,3 +10,4 @@ This game became widely known when it was mentioned in an article published by S
 
 ## How run the game
 - Execute the command: bundle exec ruby .\lib\game_of_life.rb
+- Enjoy seeing how the life works!!

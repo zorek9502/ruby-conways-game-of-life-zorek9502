@@ -10,11 +10,11 @@ class Game_of_life < Gosu::Window
 
   #Constructor en donde inicializamos todo lo necesario
   def initialize
-    @width_screen = 600
-    @height_screen = 200
+    @width_screen = 1080
+    @height_screen = 720
     @resolution = 10
     super @width_screen, @height_screen
-    self.caption = "Game of life"
+    self.caption = "Conway's Game of Life"
     #Se determina el numero de filas y columnas en base a el alto/ancho de la ventana y el tamaño de la celula
     @@rows = @height_screen / @resolution
     @@cols = @width_screen / @resolution
